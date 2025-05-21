@@ -1,4 +1,4 @@
-# operation_olist
+# operation_olist, a joint data-visualisation project
 ---
 datasets from: https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce
 
