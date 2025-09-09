@@ -11,17 +11,10 @@ A **comprehensive exploration** of **Olist**’s e-commerce business in Brazil, 
 1. [Project Context](#project-context)  
 2. [Data Sources & Overview](#data-sources--overview)  
 3. [Data Cleaning & Preprocessing](#data-cleaning--preprocessing)  
-4. [Slide-by-Slide Analysis](#slide-by-slide-analysis)  
-   - [1. Brazil E-Commerce Context](#1-brazil-e-commerce-context)  
-   - [2. Data Cleaning Details](#2-data-cleaning-details)  
-   - [3. Operations & Sales](#3-operations--sales)  
-   - [4. Repeat Purchases](#4-repeat-purchases)  
-   - [5. Online Operations](#5-online-operations)  
-   - [6. Conclusion & Recommendations](#6-conclusion--recommendations)  
-5. [Key Insights & Derived Files](#key-insights--derived-files)  
-6. [Technical Details & Libraries](#technical-details--libraries)  
-7. [Project Structure](#project-structure)  
-8. [Acknowledgments & Disclaimer](#acknowledgments--disclaimer)
+4. [Key Insights & Derived Files](#key-insights--derived-files)  
+5. [Technical Details & Libraries](#technical-details--libraries)  
+6. [Project Structure](#project-structure)  
+7. [Acknowledgments & Disclaimer](#acknowledgments--disclaimer)
 
 ---
 
@@ -78,129 +71,6 @@ These files provide a **multidimensional** view of Olist’s operations: from **
 import pandas as pd
 import numpy as np
 from scipy import stats
-
-# Slide-by-Slide Analysis
-
-## 1. Brazil E-Commerce Context
-**Slides:** “Context: The Brazil E-Commerce Market”, “However… The Vast Geography”, “Growth in Olist’s Business”
-
-- By 2018, Brazil reached **~$18.9 billion** in e-commerce revenue, leading Latin America.  
-- **Olist’s 66%** surge from 2016–18 aligns with national growth but underscores **logistical concerns** (long distances, higher costs).  
-- Data sources like **PagBrasil** and **EOS Intelligence** highlight these challenges in shipping reliability and cost.
-
----
-
-## 2. Data Cleaning Details
-**Slides:** “Data Cleaning”, “Row Removal”, “Category Renaming”, “Outlier Detection”
-
-- Each file had nulls; we **selectively removed critical rows** (e.g., missing price, freight) but retained partial nulls where feasible.  
-- **Freight cost outliers**: Removed after boxplot analysis, ensuring more robust freight comparisons.  
-- This **preprocessing** step is vital to achieve **accurate** and **clean** analyses downstream.
-
----
-
-## 3. Operations & Sales
-
-### Top Product Categories
-**Slide:** “Top Selling Products in Brazil”  
-- **Result**: ~40% of all products sold fell into:
-  1. **Bed & Bath Table**  
-  2. **Health & Beauty**  
-  3. **Sports & Leisure**  
-  4. **Furniture & Decor**  
-  5. **Computer Accessories**  
-
-### Geographic Breakdown
-**Slide:** “Top Selling Regions in Brazil”  
-- **Result**: **São Paulo (SP), Rio de Janeiro (RJ), and Minas Gerais (MG)** account for ~66.7% of total orders.  
-- Larger, more urban states → higher purchasing power, thus higher sales.
-
-### Category Combinations
-**Slide:** “Is Buying Multiple Categories Together a Factor?”  
-- Example combos: **Bed & Bath Table + Furniture Decor**.  
-- Indicates that **bundling** might boost average cart value.
-
-### Seasonality
-**Slide:** “Is Seasonality a Factor…?”  
-- **Nov–Dec** peaks for Toys, Furniture & Decor, etc. → **holiday & Black Friday** effect.  
-- **Jan–Feb** spikes for Stationery & Computer Accessories → **back-to-school**.  
-- Targeting promotions around these windows can **increase sales**.
-
-### Freight Costs
-**Slide:** “Are Shipping and Freight Costs a Factor…?”  
-- While shipping cost alone isn’t the biggest determinant of sales volume, **high freight cost** can still dissuade certain buyers (especially if alternatives exist).
-
----
-
-## 4. Repeat Purchases
-
-### Delivery Reliability
-**Slide:** “Does Faster Delivery Times Lead to Higher Chance…”  
-- **On-time deliveries** yield the best repeat rate (~5.67%).  
-- Early or late arrivals introduce uncertainty.
-
-### Standard Deviation in Delivery Days
-**Slide:** “What are the Possible Reasons…?”  
-- Late deliveries can range from 1 day to 2+ weeks (std ~15).  
-- **Consistency** (predictable timing) seems more important than sheer speed.
-
-### Category Loyalty
-**Slide:** “Which Product Categories Have Highest Repeat Purchases?”  
-- **La Cuisine** ~15% repeat purchase rate, followed by **Arts & Crafts** and **Fashion: Children**.  
-- Suggests smaller, niche categories can build **loyal customer bases**.
-
-### Freight Cost Influence
-**Slides:** “Does Higher Freight Cost Impact Repeat Purchasers?”  
-- Boxplots reveal that **one-time** customers pay slightly higher freight on average.  
-- Lower freight cost correlates with higher loyalty, especially in states near Olist’s HQ (Paraná).
-
-### Geographic Factors
-**Slide:** “Do Geographic Factors Impact Repeat Purchases?”  
-- Heatmap indicates **southern Brazil** sees higher repeat rates; presumably due to lower shipping costs and on-time deliveries.
-
----
-
-## 5. Online Operations
-
-### Listing Optimization
-**Slides:** “Does the Number of Product Images Affect Sales?”, “Does the Length of Product Title/Description Affect Sales?”  
-- ~**6–7 images** yield a **significant** p-value (<0.05) correlation with higher orders per listing.  
-- Title/Description length tests had p ~0.14 → **not significant**.
-
-### Payment Options
-**Slides:** “Does Payment Options Affect the Number of Orders?”, “Number of Payment Methods”  
-- ~**78.34%** of orders use **credit card**; **94.9%** of customers used only **1 method** per order.  
-- Payment diversity (multiple methods) is rare.
-
-### Installments
-**Slides:** “Does the Presence of Installment Payment Options Influence Total Sales?”  
-- ~**71%** of total sales volume use installments, with a **~70.2% higher** average order value.  
-- The **number** of installment months doesn’t strongly affect order value, but **having** the option matters.
-
----
-
-## 6. Conclusion & Recommendations
-**Slides:** “Final Recommendations”, “Conclusion”
-
-- **Targeted Advertising**  
-  Focus on top regions (SP, RJ, MG). Align ads with product categories that sell best there.
-
-- **Seasonal Promotions**  
-  Maximize holiday and back-to-school windows for relevant categories.
-
-- **Bundled Discounts**  
-  Combine complementary categories (Bed & Bath Table + Furniture Decor, Housewares + Home Comfort).
-
-- **Logistics & Delivery**  
-  Strive for **on-time** over early. Uncertainty hurts loyalty.  
-  Consider **satellite hubs** to reduce freight in remote states.
-
-- **Payment Flexibility**  
-  Partner with local BNPL (Buy Now, Pay Later) providers (Cleo, ADDI, DiniePay).  
-  Encourage installment usage to boost average order value.
-
-- **Listing Requirements**  
-  Minimum 3 images, recommended 6–7 to increase listing attractiveness.
 
 ---
 
